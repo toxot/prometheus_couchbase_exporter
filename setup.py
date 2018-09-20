@@ -6,18 +6,18 @@ with open(path.join(path.abspath(path.dirname(__file__)), 'README.rst'), encodin
     long_description = f.read()
 
 setup(
-    name='prometheus-couchbase-exporter',
+    name='prometheus-couchbase-exporter-vertis',
 
-    version='2.0.0',
+    version='2.0.1',
 
     description='Couchbase query Prometheus exporter',
     long_description=long_description,
 
-    url='https://github.com/brunopsoares/prometheus_couchbase_exporter',
+    url='https://github.com/toxot/prometheus_couchbase_exporter-vertis',
 
     # Author details
-    author='Bruno Soares',
-    author_email='bruno.soares@jumia.com',
+    author='ArtemSarkisov',
+    author_email='asarkisov@yandexteam.ru',
 
     # Choose your license
     license='MIT',
@@ -40,12 +40,12 @@ setup(
     install_requires=[
         'requests',
         'prometheus-client',
-        'statsmetrics'
+        'statsmetrics-vertis'
     ],
 
     entry_points={
         'console_scripts': [
-            'prometheus-couchbase-exporter=prometheus_couchbase_exporter.__init__:main',
+            'prometheus-couchbase-exporter-vertis=prometheus_couchbase_exporter-vertis.__init__:main',
         ],
     },
 )

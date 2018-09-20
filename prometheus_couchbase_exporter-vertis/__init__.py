@@ -82,6 +82,10 @@ class CouchbaseCollector(object):
                 bucket_stats = self._request_data(self.BASE_URL + bucket['stats']['uri'])
                 for bucket_metrics in values['bucket_stats']:
                     self._add_metrics(bucket_metrics, self.METRIC_PREFIX + 'bucket_stats', [bucket['name']], bucket_stats["op"]["samples"])
+                xdcr_url='/pools/default/buckets/@xdcr-' + bucket['name'] + '/stats'
+                bucket_xdcr_stats = self._request_data(self.BASE_URL + xdcr_url )
+                for bucket_xdcr_metrics in values['bucket_xdcr_stats']:
+                    self._add_metrics(bucket_xdcr_metrics, self.METRIC_PREFIX + 'bucket_xdcr_stats', [bucket['name']], bucket_xdcr_stats["op"]["samples"])
 
     """
     Clear gauges
